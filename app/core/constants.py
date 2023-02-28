@@ -12,3 +12,4 @@ LOG_FORMAT = '"%(asctime)s - [%(levelname)s] - %(message)s"'
 DT_FORMAT = '%d.%m.%Y %H:%M:%S'
 FIRST_SUPERUSER_EMAIL = os.getenv('FIRST_SUPERUSER_EMAIL', default='superuser@user.ru')
 FIRST_SUPERUSER_PASSWORD = os.getenv('FIRST_SUPERUSER_PASSWORD', default='superuser')
+DT_FORMAT_DOC = "%Y/%m/%d %H:%M:%S"

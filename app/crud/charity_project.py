@@ -55,5 +55,25 @@ class CRUDCharityProject(CRUDBase):
         await session.commit()
         return db_project
 
+    async def get_projects_by_completion_rate(
+            self,
+            session: AsyncSession,
+    ):
+        completed_projects = await session.execute(
+            select(CharityProject.name,
+                   CharityProject.description,
+                   CharityProject.close_date,
+                   CharityProject.create_date).where(CharityProject.fully_invested))
+        completed_projects = completed_projects.all()
+        result = []
+        for project in completed_projects:
+            result.append({
+                'name': project.name,
+                'time_delta': (project.close_date - project.create_date),
+                'description': project.description
+            })
+        result_sorted = sorted(result, key=lambda x: x['time_delta'])
+        return result_sorted
+
 
 charity_project_crud = CRUDCharityProject(CharityProject)
