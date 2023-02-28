@@ -12,6 +12,7 @@ from app.schemas.charity_project import (CharityProjectCreate,
                                          CharityProjectUpdate)
 from app.services.investing import investing_for_project
 
+
 router = APIRouter()
 
 

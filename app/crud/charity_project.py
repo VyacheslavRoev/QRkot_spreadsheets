@@ -40,7 +40,7 @@ class CRUDCharityProject(CRUDBase):
             session.add(db_project)
         except Exception:
             session.rollback()
-            logging.error('Не получилось записать данные в базу!')
+            logging.error('Не получилось записать данные в базу!', exc_info=True, stack_info=True)
         else:
             await session.commit()
             await session.refresh(db_project)

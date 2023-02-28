@@ -23,7 +23,8 @@ git clone git@github.com:VyacheslavRoev/cat_charity_fund.git
 cd cat_charity_fund
 ```
 
-2. Cоздать и активировать виртуальное окружение:
+2. Cоздать и активировать виртуальное окружение.  
+Установить зависимости из файла requirements.txt.
 
 
 * Если у вас Linux/macOS
@@ -34,6 +35,12 @@ cd cat_charity_fund
     ```
     source venv/bin/activate
     ```
+    ```
+    python3 -m pip install --upgrade pip
+    ```
+    ```
+    pip install -r requirements.txt
+    ```
 
 * Если у вас windows
 
@@ -43,18 +50,15 @@ cd cat_charity_fund
     ```
     source venv/Scripts/activate
     ```
+    ```
+    python -m pip install --upgrade pip
+    ```
+    ```
+    pip install -r requirements.txt
+    ```
 
-3. Установить зависимости из файла requirements.txt:
-
-```
-python -m pip install --upgrade pip
-```
-
-```
-pip install -r requirements.txt
-```
-4. Создать сервисный аккаунт на Google Cloude Platform и получить JSON-файл с ключом доступа к нему.
-5. В корневой директории создать файл .env с переменными окружения, необходимыми для работы приложения.
+3. Создать сервисный аккаунт на Google Cloude Platform и получить JSON-файл с ключом доступа к нему.
+4. В корневой директории создать файл .env с переменными окружения, необходимыми для работы приложения.
 
 ```
 DATABASE_URL=sqlite+aiosqlite:///./fastapi.db
@@ -75,8 +79,8 @@ AUTH_PROVIDER_X509_CERT_URL=
 CLIENT_X509_CERT_URL=
 ```
 
-6. Из корневой директории командой uvicorn app.main:app --reload запустить приложение. При первом запуске автоматически будет создан суперюзер с указанными в .env email и паролем
-7. Документация API будет доступна по адресам
+5. Из корневой директории командой uvicorn app.main:app --reload запустить приложение. При первом запуске автоматически будет создан суперюзер с указанными в .env email и паролем
+6. Документация API будет доступна по адресам
 ```
 http://127.0.0.1:8000/docs (здесь же можно авторизоваться и выполнять запросы)
 http://127.0.0.1:8000/redoc
