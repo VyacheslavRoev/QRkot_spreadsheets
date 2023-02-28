@@ -53,7 +53,7 @@ python -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
-4. Создать сервисный аккаунт на Google Cloude Platform и полчить JSON-файл с ключом доступа к нему.
+4. Создать сервисный аккаунт на Google Cloude Platform и получить JSON-файл с ключом доступа к нему.
 5. В корневой директории создать файл .env с переменными окружения, необходимыми для работы приложения.
 
 ```
